@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <canvas id="star-canvas"></canvas>
+
+    <div id="main-container">
+        <button id="nav-toggle" aria-label="Toggle Navigation">
+            <span class="icon">➜</span>
+        </button>
+
+        <nav id="sidebar">
+            <div class="user-profile">
+                <div class="avatar"></div>
+                <div class="username">Bit91</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div id="theme-toggle-wrapper">
+            <span id="theme-label">Dark</span>
+            <label class="switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        <main id="content">
+            <section class="page-section">
+                <h1>Get in Touch</h1>
+                <p>Feel free to reach out for collaborations or just a chat!</p>
+            </section>
+        </main>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>
