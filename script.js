@@ -16,65 +16,41 @@ function resize() {
 
 window.addEventListener('resize', resize);
 
-// Star Class
-class Star {
+// Square Class
+class Square {
     constructor() {
         this.reset();
-        // Start at random y to fill screen initially
+        // Start mixed in screen
         this.y = Math.random() * height;
     }
 
     reset() {
         this.x = Math.random() * width;
-        this.y = -10; // Start just above screen
-        this.z = Math.random() * 0.5 + 0.5; // Depth/Speed factor
-        this.size = Math.random() * 2 + 0.5;
-        this.opacity = Math.random() * 0.5 + 0.3;
-        this.flickerSpeed = Math.random() * 0.02 + 0.005;
-        this.flickerDir = 1;
+        this.y = -50;
+        this.size = Math.random() * 20 + 5; // Squares
+        this.speed = Math.random() * 1 + 0.2;
+        this.opacity = Math.random() * 0.3 + 0.1; // Subtle
     }
 
     update() {
-        this.y += this.z * 0.5; // Move down
-
-        // Flicker effect
-        this.opacity += this.flickerSpeed * this.flickerDir;
-        if (this.opacity > 1 || this.opacity < 0.2) {
-            this.flickerDir *= -1;
-        }
+        this.y += this.speed;
 
         // Reset if out of bounds
-        if (this.y > height) {
+        if (this.y > height + 50) {
             this.reset();
         }
     }
 
     draw() {
-        ctx.fillStyle = `rgba(255, 215, 0, ${this.opacity})`; // Gold
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Shiny cross effect for larger stars
-        if (this.size > 1.5) {
-            ctx.globalAlpha = this.opacity * 0.6;
-            ctx.beginPath();
-            ctx.moveTo(this.x - this.size * 2, this.y);
-            ctx.lineTo(this.x + this.size * 2, this.y);
-            ctx.moveTo(this.x, this.y - this.size * 2);
-            ctx.lineTo(this.x, this.y + this.size * 2);
-            ctx.strokeStyle = "gold";
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-            ctx.globalAlpha = 1.0;
-        }
+        ctx.fillStyle = `rgba(180, 220, 220, ${this.opacity})`; // Light Cyan Greyish
+        ctx.fillRect(this.x, this.y, this.size, this.size);
     }
 }
 
 function initStars() {
     stars = [];
     for (let i = 0; i < STAR_COUNT; i++) {
-        stars.push(new Star());
+        stars.push(new Square());
     }
 }
 
@@ -88,24 +64,21 @@ function animate() {
 }
 
 // Navigation Logic
-const navToggle = document.getElementById('nav-toggle');
-const body = document.body;
-
-navToggle.addEventListener('click', () => {
-    body.classList.toggle('nav-open');
-});
+// Navigation Logic
+// (Floating nav requires no JS for opening/closing, just default link behavior)
 
 // Theme Logic
 const themeToggle = document.getElementById('theme-toggle');
-const themeLabel = document.getElementById('theme-label');
 
-themeToggle.addEventListener('change', () => {
-    if (themeToggle.checked) {
-        document.documentElement.setAttribute('data-theme', 'light');
-        themeLabel.textContent = 'Light';
-    } else {
+themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+
+    if (!!currentTheme) {
+        // Switch to Dark
         document.documentElement.removeAttribute('data-theme');
-        themeLabel.textContent = 'Dark';
+    } else {
+        // Switch to Light
+        document.documentElement.setAttribute('data-theme', 'light');
     }
 });
 
