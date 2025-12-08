@@ -30,8 +30,13 @@ body {
     font-family: var(--font-main);
     overflow-x: hidden;
     transition: background-color var(--transition-speed);
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 /* Background Canvas */
@@ -168,10 +173,11 @@ main#content {
     padding-top: 120px;
     /* Safe space for floating nav */
     width: 100%;
-    height: 100%;
+    /* height: 100%; Removed to allow content to grow */
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     transition: padding-left var(--transition-speed) ease;
     position: relative;
     z-index: 2;
@@ -223,13 +229,16 @@ main#content {
     color: var(--accent-color);
 }
 
-/* Intro & Skills Section */
-#intro-skills {
-    margin-top: 4rem;
+/* Sections Spacing */
+.page-section {
     margin-bottom: 4rem;
+}
+
+#intro,
+#skills {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
 }
 
 .intro-container h2 {
@@ -292,4 +301,67 @@ main#content {
 [data-theme="light"] .skill-card:hover {
     background: rgba(0, 0, 0, 0.08);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Projects Section */
+#projects {
+    margin-bottom: 4rem;
+}
+
+#projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--accent-color);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent-color);
+}
+
+.project-content {
+    padding: 2rem;
+    text-align: left;
+}
+
+.project-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-color);
+}
+
+.project-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+[data-theme="light"] .project-card {
+    background: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .project-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }

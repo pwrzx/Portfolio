@@ -22,10 +22,10 @@
             </div>
 
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="pages/portfolio.html">Portfolio</a></li>
-                <li><a href="pages/about.html">About</a></li>
-                <li><a href="pages/contact.html">Contact</a></li>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
 
             <button id="theme-toggle" aria-label="Toggle Theme">
@@ -49,11 +49,11 @@
         <main id="content">
             <section id="home" class="hero-section">
                 <h1>Welcome to My Portfolio</h1>
-                <p>Exploring the cosmos of code and design.</p>
+                <p>Exploring the cosmos of code and design.</p><br>
             </section>
 
-            <!-- Intro & Skills Section -->
-            <section id="intro-skills" class="page-section">
+            <!-- About Section -->
+            <section id="about" class="page-section">
                 <div class="intro-container">
                     <h2>Hello, I'm Muntadher!</h2>
                     <p>
@@ -62,7 +62,36 @@
                         With a passion for clean code and creative design, I turn ideas into reality.
                     </p>
                 </div>
+            </section>
 
+            <!-- Projects Section -->
+            <section id="projects" class="page-section">
+                <h2>My Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>Portfolio Website</h3>
+                            <p>A personal portfolio built with HTML, CSS, and JS, featuring a dark glassmorphism theme.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>Project Placeholder 1</h3>
+                            <p>Description of another cool project goes here. Focusing on UI/UX and functionality.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>Project Placeholder 2</h3>
+                            <p>Another amazing project showcasing modern web development techniques.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="page-section">
                 <div class="skills-container">
                     <h3>My Tech Stack</h3>
                     <div class="skills-grid">
@@ -87,7 +116,19 @@
                     </div>
                 </div>
             </section>
-            <!-- Other sections can be added here -->
+
+
+            <!-- Contact Section -->
+            <section id="contact" class="page-section">
+                <h1>Get in Touch</h1>
+                <p>Feel free to reach out for collaborations or just a chat!</p>
+                <div style="margin-top: 1.5rem;">
+                    <p>Email: <a href="mailto:email@example.com"
+                            style="color: var(--accent-color); text-decoration: none;">iraqicraft63@gmail.com</a></p>
+                    <p>Phone: <a href="tel:+1234567890" style="color: var(--accent-color); text-decoration: none;">
+                            +964 7727804537</a></p>
+                </div>
+            </section>
         </main>
     </div>
 
