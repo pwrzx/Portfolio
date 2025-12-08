@@ -204,9 +204,14 @@ main#content {
 /* Page Sections */
 .page-section {
     max-width: 800px;
+    width: fit-content;
     margin: 0 auto;
     text-align: center;
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    scroll-margin-top: 150px;
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(10px);
     border-radius: 20px;
@@ -220,7 +225,7 @@ main#content {
 }
 
 .page-section p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     line-height: 1.6;
 }
 
@@ -231,7 +236,7 @@ main#content {
 
 /* Sections Spacing */
 .page-section {
-    margin-bottom: 4rem;
+    margin-bottom: 8rem;
 }
 
 #intro,
