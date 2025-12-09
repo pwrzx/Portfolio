@@ -42,7 +42,7 @@ class Square {
     }
 
     draw() {
-        ctx.fillStyle = `rgba(180, 220, 220, ${this.opacity})`; // Light Cyan Greyish
+        ctx.fillStyle = `rgba(0, 200, 255, ${this.opacity})`; // Cyan
         ctx.fillRect(this.x, this.y, this.size, this.size);
     }
 }
