@@ -1,133 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Muntadher is a computer engineering student building thoughtful web experiences.">
+  <title>Muntadher - Web Developer</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <canvas id="star-canvas"></canvas>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="wordmark" href="#home" aria-label="Muntadher home">M.</a>
+      <div class="nav-links">
+        <a class="is-active" href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="theme-toggle" type="button" aria-label="Switch color theme">Theme</button>
+    </nav>
+  </header>
 
-    <div id="main-container">
-        <!-- Floating Navigation -->
-        <nav id="floating-nav">
-            <div class="nav-logo">
-                <div class="logo-box">M</div>
-            </div>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy reveal">
+        <p class="kicker">Computer engineering student</p>
+        <h1>Digital work with a clear point of view.</h1>
+        <p class="hero-intro">I build responsive web experiences where clean code and considered visual design meet.</p>
+        <a class="button" href="#projects">View projects</a>
+      </div>
+      <figure class="hero-image reveal reveal-delay">
+        <img src="https://picsum.photos/seed/muntadher-studio/1400/1800" alt="Abstract architectural light and shadow">
+      </figure>
+    </section>
 
-            <ul class="nav-links">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+    <section class="about-section" id="about">
+      <p class="section-mark">About</p>
+      <div class="about-copy">
+        <h2>Ideas become useful when they are built well.</h2>
+        <p>I am Muntadher, a Computer Engineering student focused on web development and design. I enjoy turning an idea into a fast, accessible, user-friendly experience.</p>
+      </div>
+      <aside class="availability">Open to thoughtful collaborations.</aside>
+    </section>
 
-            <button id="theme-toggle" aria-label="Toggle Theme">
-                <!-- Sun Icon (Default for dark mode) -->
-                <svg class="theme-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-            </button>
-        </nav>
+    <section class="projects-section" id="projects">
+      <div class="project-heading">
+        <p class="section-mark">Selected work</p>
+        <h2>Small products, made with care.</h2>
+      </div>
+      <article class="project project-primary">
+        <div class="project-image"><img src="https://picsum.photos/seed/portfolio-interface/1500/1000" alt="Textural blue architectural composition"></div>
+        <div class="project-details">
+          <p class="project-type">Personal site</p>
+          <h3>Portfolio Website</h3>
+          <p>A personal portfolio built with HTML, CSS, and JavaScript, designed as a focused home for my work.</p>
+          <span>HTML / CSS / JavaScript</span>
+        </div>
+      </article>
+      <article class="project project-secondary">
+        <div class="project-details">
+          <p class="project-type">Education platform</p>
+          <h3>DanshFarda</h3>
+          <p>A practical guide to university applications, tuition fees, and admission details for prospective students.</p>
+          <span>Research / Web design</span>
+        </div>
+        <div class="project-image"><img src="https://picsum.photos/seed/university-library/1200/1600" alt="Modern university library interior"></div>
+      </article>
+    </section>
 
-        <!-- Main Content Area -->
-        <main id="content">
-            <section id="home" class="hero-section">
-                <h1>Welcome to My Portfolio</h1>
-                <p>Exploring the cosmos of code and design.</p><br>
-            </section>
+    <section class="stack-section" id="skills">
+      <div>
+        <p class="section-mark">Capabilities</p>
+        <h2>A practical, growing toolkit.</h2>
+      </div>
+      <ul class="skill-list" aria-label="Technical skills">
+        <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Python</li><li>React.js</li><li>TypeScript</li>
+      </ul>
+    </section>
 
-            <!-- About Section -->
-            <section id="about" class="page-section">
-                <div class="intro-container">
-                    <h2>Hello, I'm Muntadher!</h2>
-                    <p>
-                        I am a Computer Engineering Student with a passion for web development and design.
-                        I specialize in building modern, responsive, and user-friendly web applications.
-                        With a passion for clean code and creative design, I turn ideas into reality.
-                    </p>
-                </div>
-            </section>
+    <section class="contact-section" id="contact">
+      <div>
+        <p class="section-mark">Contact</p>
+        <h2>Have a project in mind?</h2>
+        <p>For a collaboration, a role, or a good technical conversation, get in touch.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:iraqicraft63@gmail.com">iraqicraft63@gmail.com</a>
+        <a href="tel:+9647727804537">+964 7727804537</a>
+      </div>
+    </section>
+  </main>
 
-            <!-- Projects Section -->
-            <section id="projects" class="page-section">
-                <h2>My Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-content">
-                            <h3>Portfolio Website</h3>
-                            <p>A personal portfolio built with HTML, CSS, and JS, featuring a dark glassmorphism theme.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-content">
-                            <h3>DanshFarda</h3>
-                            <p>A website about applying for universities, including tuition fees and admission details.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Skills Section -->
-            <section id="skills" class="page-section">
-                <div class="skills-container">
-                    <h3>My Tech Stack</h3>
-                    <div class="skills-grid">
-                        <div class="skill-card">
-                            <span class="skill-name">HTML</span>
-                        </div>
-                        <div class="skill-card">
-                            <span class="skill-name">CSS</span>
-                        </div>
-                        <div class="skill-card">
-                            <span class="skill-name">JavaScript</span>
-                        </div>
-                        <div class="skill-card">
-                            <span class="skill-name">Python</span>
-                        </div>
-                        <div class="skill-card">
-                            <span class="skill-name">React.js</span>
-                        </div>
-                        <div class="skill-card">
-                            <span class="skill-name">TypeScript</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <!-- Contact Section -->
-            <section id="contact" class="page-section">
-                <h1>Get in Touch</h1>
-                <p>Feel free to reach out for collaborations or just a chat!</p>
-                <div style="margin-top: 1.5rem;">
-                    <p>Email: <a href="mailto:email@example.com"
-                            style="color: var(--accent-color); text-decoration: none;">iraqicraft63@gmail.com</a></p>
-                    <p>Phone: <a href="tel:+1234567890" style="color: var(--accent-color); text-decoration: none;">
-                            +964 7727804537</a></p>
-                </div>
-            </section>
-        </main>
-    </div>
-
-    <script src="script.js"></script>
+  <footer class="site-footer"><span>Muntadher</span><a href="#home">Back to top</a></footer>
+  <script src="script.js"></script>
 </body>
-
 </html>
